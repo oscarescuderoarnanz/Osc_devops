@@ -52,7 +52,7 @@ resource "aws_instance" "swarm_node" {
     sh get-docker.sh
     adduser ubuntu docker
   EOF
-
+  
   tags = {
     Name = "swarm"
   }
