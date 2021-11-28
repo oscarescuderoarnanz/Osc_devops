@@ -92,6 +92,6 @@ resource "aws_security_group" "http" {
   }
 
   tags = {
-    Name = var.tag
+    Name = "swarm"
   }
 }
