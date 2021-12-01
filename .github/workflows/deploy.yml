@@ -1,5 +1,6 @@
 name: Deploy services to cluster
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
