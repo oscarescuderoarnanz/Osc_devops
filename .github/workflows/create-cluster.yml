@@ -1,6 +1,11 @@
 name: Create the cluster
 on:
-  release:
+  workflow_dispatch:
+    number_nodes:
+      default: 3
+      required: true
+      description: "Number of nodes of the cluster"
+
 jobs:
   deploy:
     runs-on: ubuntu-20.04
