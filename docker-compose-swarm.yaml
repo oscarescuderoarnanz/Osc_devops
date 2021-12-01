@@ -3,7 +3,6 @@ version: '3.9'
 services:
   covid19_1:
     image: osc1998/oscarescuderoarnanz:main
-    build: .
     ports:
       - "40001:8000"
     deploy:
