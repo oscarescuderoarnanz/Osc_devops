@@ -74,9 +74,10 @@
   tasks:
     - name: join inactive nodes as manager to cluster
       shell: >
-        docker swarm join --advertise-addr={{ ansible_default_ipv4.address }}:2377
-        --token={{ token }}
-        {{ groups['swarm_manager_ips'][0] }}:2377
+        if [ {{ ansible_default_ipv4.address }} != {{ groups['swarm_manager_ips'][0] }} ]
+          then
+            docker swarm join --advertise-addr={{ ansible_default_ipv4.address }}:2377 --token={{ token }} {{ groups['swarm_manager_ips'][0] }}:2377
+        fi
 
 # show the nodes of the cluster
 - hosts: swarm_active[0]
