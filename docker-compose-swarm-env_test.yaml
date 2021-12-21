@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  covid19_1:
+    image: osc1998/oscarescuderoarnanz:env_test
+    ports:
+      - "40002:8000"
+    deploy:
+      replicas: 3
+      update_config:
+        delay: 10s
